@@ -15,8 +15,8 @@ N = 100; % realizations
 
 
 %% Generate normal distribution
-X = normrnd(avg, sqrt(var), [N, 1]);
-Y = normrnd(avg, sqrt(var), [N, 1]);
+X = normrnd(avg, stdev, [N, 1]);
+Y = normrnd(avg, stdev, [N, 1]);
 Z = X.*cos(2*pi*f0*t) + Y.*sin(2*pi*f0*t);
 
 %% Numerical computations
