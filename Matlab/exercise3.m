@@ -34,8 +34,8 @@ title('$X(t)$', Interpreter='latex');
 for i = 1:N
     plot(t, X(i, :), HandleVisibility='off', LineWidth=0.1);
 end
-plot(t, mX, Color='#660000', LineStyle=':', DisplayName='$m_X(t)$', LineWidth=1.6);
-legend('show');
+% plot(t, mX, Color='#660000', LineStyle=':', DisplayName='$m_X(t)$', LineWidth=1.6);
+% legend('show');
 xlabel('$t$'); ylabel('$X(t)$');
 
 subplot(2, 2, 3, 'replace');
