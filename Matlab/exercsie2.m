@@ -36,8 +36,8 @@ title('$Z(t) = X*cos(2 \pi f_0*t) + Y*sin(2 \pi*f0*t)$', Interpreter='latex');
 for i = 1:N
     plot(t, Z(i, :), HandleVisibility='off', LineWidth=0.1);
 end
-plot(t, mZ, Color='#660000', LineStyle=':', DisplayName='$m_Z(t)$', LineWidth=1.6);
-plot(t, repmat(mZavg, size(t)), Color='black', LineStyle=':', DisplayName='$\hat{m}_Z(t)$', LineWidth=1.3);
+plot(t, mZ, Color='#660000', LineStyle=':', DisplayName='$m_Z(t)$', LineWidth=1.8);
+plot(t, repmat(mZavg, size(t)), Color='black', LineStyle=':', DisplayName='$\hat{m}_Z(t)$', LineWidth=1.8);
 legend('show');
 xlabel('$t$'); ylabel('$Z(t)$');
 
