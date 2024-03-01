@@ -47,9 +47,9 @@ too coarse.
 
 The generated plots are shown below.
 
-![alt text](figures/Exercise2.svg)
+![Exercise 2 plot](figures/Exercise2.svg)
 
-![alt text](figures/Exercise2_hr.svg)
+![Exercise 2 plot with higher resolution](figures/Exercise2_hr.svg)
 
 ### Code
 
@@ -107,4 +107,78 @@ subplot(2, 2, 4, 'replace');
 title('Autocorrelation in time difference $R_Z(\tau)$', Interpreter='latex');
 plot(tau, RZtau);
 xlabel('$\tau$'); ylabel('$R_Z(\tau)$');
+```
+
+## 3. Statistical Description of a stochastic process
+
+### Procedure
+
+The stochastic process was simulated using the given parameters passed to the `mvrnd` function (multi-variate
+normal distribution), and the covariance matrix was computed usin the same method as in section 2. The 2D
+covariance was computed using the following equation for Gaussian processes and the given expressions, using
+the substitution $t_1 - t_j = \tau$:
+
+$$
+C_{ij} = R_X(t_i, t_j) - \mu_X(t_i) \mu_X(t_j) = R_X(t_i, t_j)
+$$
+
+### Results and plots
+
+The generated plot with 3 subplots is shown below.
+
+![Exercise 3 plot](figures/Exercise3.svg)
+
+### Code
+
+```Matlab
+%% Setup
+set(groot,'defaulttextinterpreter','latex');,
+set(groot, 'defaultLegendInterpreter', 'latex');
+
+
+%% Parameters
+
+tstep = 0.1;
+t = 0:tstep:10;
+T = length(t);
+N = 20;
+
+stdev = 1/sqrt(2*pi); % Sigma
+var = stdev^2; % Sigma squared
+
+mX = zeros(size(t)); % Mu
+CovX = exp(-(t-t').^2/(2*var));
+
+
+%% Generate samples
+
+X = mvnrnd(mX, CovX, N);
+RX = permute(mean(X.*permute(X, [1, 3, 2])), [2,3,1]);
+
+tau = -5:tstep:5;
+RXtau = exp(-(tau).^2/(2*var)); 
+
+
+%% Plot
+
+figure(1);
+subplot(2, 2, 1:2, 'replace'); grid on; hold on;
+title('$X(t)$', Interpreter='latex');
+for i = 1:N
+    plot(t, X(i, :), HandleVisibility='off', LineWidth=0.1);
+end
+% plot(t, mX, Color='#660000', LineStyle=':', DisplayName='$m_X(t)$', LineWidth=1.6);
+% legend('show');
+xlabel('$t$'); ylabel('$X(t)$');
+
+subplot(2, 2, 3, 'replace');
+title('Autocorrelation $R_X(t_1, t_2)$', Interpreter='latex');
+[t1_, t2_] = meshgrid(t);
+surf(t1_, t2_, RX, FaceAlpha=0.5, EdgeColor='none');
+xlabel('$t_1$'); ylabel('$t_2$'); zlabel('$R_X(t_1, t_2)$');
+
+subplot(2, 2, 4, 'replace');
+title('Autocorrelation in time difference $R_X(\tau)$', Interpreter='latex');
+plot(tau, RXtau);
+xlabel('$\tau$'); ylabel('$R_X(\tau)$');
 ```
