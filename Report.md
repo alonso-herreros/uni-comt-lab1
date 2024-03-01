@@ -1,3 +1,12 @@
+---
+title: Lab 1 Report
+fontsize: 9pt
+fontfamily: times
+puppeteer:
+    pdf:
+        scale: 0.8
+---
+
 ## Communication Theory
 
 # Lab 1 Report
