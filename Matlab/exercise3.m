@@ -20,7 +20,7 @@ CovX = exp(-(t-t').^2/(2*var));
 %% Generate samples
 
 X = mvnrnd(mX, CovX, N);
-RX = permute(mean(X.*permute(X, [1, 3, 2])), [2,3,1]);
+RX_ = permute(mean(X.*permute(X, [1, 3, 2])), [2,3,1]);
 
 tau = -5:tstep:5;
 RXtau = exp(-(tau).^2/(2*var)); 
@@ -30,21 +30,23 @@ RXtau = exp(-(tau).^2/(2*var));
 
 figure(1);
 subplot(2, 2, 1:2, 'replace'); grid on; hold on;
-title('$X(t)$', Interpreter='latex');
 for i = 1:N
     plot(t, X(i, :), HandleVisibility='off', LineWidth=0.1);
 end
-% plot(t, mX, Color='#660000', LineStyle=':', DisplayName='$m_X(t)$', LineWidth=1.6);
-% legend('show');
+
+title('Gaussian process $X(t)$', Interpreter='latex');
 xlabel('$t$'); ylabel('$X(t)$');
 
 subplot(2, 2, 3, 'replace');
-title('Autocorrelation $R_X(t_1, t_2)$', Interpreter='latex');
 [t1_, t2_] = meshgrid(t);
-surf(t1_, t2_, RX, FaceAlpha=0.5, EdgeColor='none');
-xlabel('$t_1$'); ylabel('$t_2$'); zlabel('$R_X(t_1, t_2)$');
+surf(t1_, t2_, RX_, FaceAlpha=0.5, EdgeColor='none'); hold on;
 
-subplot(2, 2, 4, 'replace');
-title('Autocorrelation in time difference $R_X(\tau)$', Interpreter='latex');
+title('Autocorrelation approximation $\hat{R}_X(t_1, t_2)$', Interpreter='latex');
+xlabel('$t_1$'); ylabel('$t_2$'); zlabel('$\hat{R}_X(t_1, t_2)$');
+
+
+subplot(2, 2, 4, 'replace'); grid on; hold on;
 plot(tau, RXtau);
+
+title('Autocorrelation in time difference $R_X(\tau)$', Interpreter='latex');
 xlabel('$\tau$'); ylabel('$R_X(\tau)$');
