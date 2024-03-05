@@ -1,19 +1,27 @@
 ---
 title: Lab 1 Report
-fontsize: 9pt
-fontfamily: times
 puppeteer:
     pdf:
-        scale: 0.8
+        format: A4
 ---
 
-## Communication Theory
+<style>
+:root {
+    --markdown-font-family: "Times New Roman", Times, serif;
+    --markdown-font-size: 10.5pt;
+}
+</style>
+
+<p class="supt1 center">Communication Theory</p>
 
 # Lab 1 Report
 
-*Academic year 2023-2024*  
-
-**Alonso Herreros Copete, Jose Alberto Pastor Llorente**
+<p class="subt2 center">
+Academic year 2023-2024
+</p>
+<p class="subt2 center">
+Alonso Herreros Copete, Jose Alberto Pastor Llorente
+</p>
 
 ---
 
@@ -53,8 +61,6 @@ Additional plots were generated using a 0.1 time step to increase the resolution
 too coarse.
 
 ### Results and plots
-
-The generated plots are shown below.
 
 ![Exercise 2 plot](figures/Exercise2.svg)
 
@@ -132,8 +138,6 @@ C_{ij} = R_X(t_i, t_j) - \mu_X(t_i) \mu_X(t_j) = R_X(t_i, t_j)
 $$
 
 ### Results and plots
-
-The generated plot with 3 subplots is shown below.
 
 ![Exercise 3 plot](figures/Exercise3.svg)
 
