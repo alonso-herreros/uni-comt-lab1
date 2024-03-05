@@ -37,6 +37,7 @@ p { text-align: justify; }
 code {
     font-size: 80%;
     font-feature-settings: --vscode-editor-font-features;
+    white-space: pre-wrap;
     background-color: var(--vscode-textPreformat-background);
     border-radius: 4px;
     padding: 1px 3px;
@@ -45,8 +46,19 @@ pre {
     background-color: var(--vscode-textCodeBlock-background);
     border: 1px solid var(--vscode-widget-border);
 }
+
+img {
+    background-color: var(--vscode-textBlockQuote-background);
+    padding: 5px;
+    border-radius: 4px;
+}
 /* #endregion Inline and Fenced code */
 
 /* #region Custom classes */
 .center { text-align: center; }
+
+p.caption {
+    margin-top: -14px;
+    break-before: avoid;
+}
 /* #endregion Custom classes */
