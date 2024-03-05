@@ -1,5 +1,13 @@
-/* PDF styles */
-.center { text-align: center; }
+:root {
+    /* These are overriden in my preview so in dark mode it's fine */
+    --vscode-editor-font-family: "Fira Code", Consolas, "Courier New", monospace;
+    --vscode-editor-font-features:
+        "zero", "cv01", "cv02", "cv06", "cv15", "cv18", "ss01", "ss02", "ss03", "ss04", "ss08";
+    --vscode-textPreformat-background: #eee;
+    --vscode-textCodeBlock-background: #fbfbfb;
+    --vscode-textBlockQuote-background: #f9f9f9;
+    --vscode-widget-border: #ddd;
+}
 
 h1, h2, h3, h4, h5, h6 {
     break-after: avoid;
@@ -25,16 +33,10 @@ p { text-align: justify; }
 
 .katex { font-size: 1.1em; }
 
-/* Correct inline and fenced code */
-:root {
-    --vscode-editor-font-family: "Fira Code", Consolas, "Courier New", monospace;
-    --vscode-textPreformat-background: #eee; /* These are overriden so my preview in dark mode is fine */
-    --vscode-textCodeBlock-background: #fbfbfb;
-    --vscode-widget-border: #ddd;
-}
+/* #region Inline and fenced code */
 code {
     font-size: 80%;
-    font-feature-settings: "zero", "cv01", "cv02", "cv06", "cv15", "cv18", "ss01", "ss02", "ss03", "ss04", "ss08";
+    font-feature-settings: --vscode-editor-font-features;
     background-color: var(--vscode-textPreformat-background);
     border-radius: 4px;
     padding: 1px 3px;
@@ -43,3 +45,8 @@ pre {
     background-color: var(--vscode-textCodeBlock-background);
     border: 1px solid var(--vscode-widget-border);
 }
+/* #endregion Inline and Fenced code */
+
+/* #region Custom classes */
+.center { text-align: center; }
+/* #endregion Custom classes */
