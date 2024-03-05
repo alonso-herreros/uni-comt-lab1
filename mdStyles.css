@@ -1,0 +1,45 @@
+/* PDF styles */
+.center { text-align: center; }
+
+h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+}
+h1, h2, .supt1, .supt2, .subt1, .subt2 {
+    font-variant: small-caps;
+}
+h1 { text-align: center; }
+.supt1, .subt1 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.supt1 {
+    margin-bottom: 0.2em;
+}
+.subt1 {
+    margin-bottom: 1em;
+}
+.subt2 { font-size: 1.2em; }
+.subt3 { font-size: 1.1em; }
+
+p { text-align: justify; }
+
+.katex { font-size: 1.1em; }
+
+/* Correct inline and fenced code */
+:root {
+    --vscode-editor-font-family: "Fira Code", Consolas, "Courier New", monospace;
+    --vscode-textPreformat-background: #eee; /* These are overriden so my preview in dark mode is fine */
+    --vscode-textCodeBlock-background: #fbfbfb;
+    --vscode-widget-border: #ddd;
+}
+code {
+    font-size: 80%;
+    font-feature-settings: "zero", "cv01", "cv02", "cv06", "cv15", "cv18", "ss01", "ss02", "ss03", "ss04", "ss08";
+    background-color: var(--vscode-textPreformat-background);
+    border-radius: 4px;
+    padding: 1px 3px;
+}
+pre {
+    background-color: var(--vscode-textCodeBlock-background);
+    border: 1px solid var(--vscode-widget-border);
+}
