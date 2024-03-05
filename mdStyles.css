@@ -35,6 +35,7 @@ p { text-align: justify; }
 code {
     font-size: 80%;
     font-feature-settings: "zero", "cv01", "cv02", "cv06", "cv15", "cv18", "ss01", "ss02", "ss03", "ss04", "ss08";
+    white-space: pre-wrap;
     background-color: var(--vscode-textPreformat-background);
     border-radius: 4px;
     padding: 1px 3px;
