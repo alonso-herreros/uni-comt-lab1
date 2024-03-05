@@ -37,6 +37,7 @@ p { text-align: justify; }
 code {
     font-size: 80%;
     font-feature-settings: --vscode-editor-font-features;
+    white-space: pre-wrap;
     background-color: var(--vscode-textPreformat-background);
     border-radius: 4px;
     padding: 1px 3px;
