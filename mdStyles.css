@@ -56,4 +56,9 @@ img {
 
 /* #region Custom classes */
 .center { text-align: center; }
+
+p.caption {
+    margin-top: -14px;
+    break-before: avoid;
+}
 /* #endregion Custom classes */
