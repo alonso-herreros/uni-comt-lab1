@@ -36,7 +36,7 @@ p { text-align: justify; }
 /* #region Inline and fenced code */
 code {
     font-size: 80%;
-    font-feature-settings: --vscode-editor-font-features;
+    font-feature-settings: var(--vscode-editor-font-features);
     white-space: pre-wrap;
     background-color: var(--vscode-textPreformat-background);
     border-radius: 4px;
