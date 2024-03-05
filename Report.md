@@ -63,8 +63,14 @@ too coarse.
 ### Results and plots
 
 ![Exercise 2 plot](figures/Exercise2.svg)
+<p class="caption center">
+    Requested plot with 0.5 time step
+</p>
 
 ![Exercise 2 plot with higher resolution](figures/Exercise2_hr.svg)
+<p class="caption center">
+    Plot with 0.1 time step
+</p>
 
 ### Code
 
@@ -137,9 +143,21 @@ $$
 C_{ij} = R_X(t_i, t_j) - \mu_X(t_i) \mu_X(t_j) = R_X(t_i, t_j)
 $$
 
+After generating these samples, the experiment was repeated using 2000 iterations instead of 20, in order to
+confirm that the noise in the covariance matrix was only the result of the numerical approximation with a low
+number of samples.
+
 ### Results and plots
 
 ![Exercise 3 plot](figures/Exercise3.svg)
+<p class="caption center">
+    Requested plot using 20 samples
+</p>
+
+![Exercise 3 plot with more samples](figures/Exercise3_N2000.svg)
+<p class="caption center">
+    Plot using 2000 samples
+</p>
 
 ### Code
 
